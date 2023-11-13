@@ -3,71 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Survey Form</title>
 </head>
 <body>
-    <header>
-        <h1 id="title">Survey Form</h1>
-        <p id="description">Please fill out this survey to provide us with your valuable feedback.</p>
-    </header>
-    <form id="survey-form">
+    <div class="container">
+      <header class="header">
+        <h1 id="title" class="text-center">BigBrew Survey Form</h1>
+        <p id="description" class="description text-center">
+          Thank you for taking the time to help us improve our shop
+        </p>
+      </header>
+      <form id="survey-form">
         <div class="form-group">
-            <label for="name" id="name-label">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          <label id="name-label" for="name">Name</label>
+          <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required="">
         </div>
         <div class="form-group">
-            <label for="email" id="email-label">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          <label id="email-label" for="email">Email</label>
+          <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required="">
         </div>
         <div class="form-group">
-            <label for="number" id="number-label">Age:</label>
-            <input type="number" id="number" name="age" placeholder="Enter your age" min="18" max="100" required>
+          <label id="number-label" for="number">Age<span class="clue">(optional)</span></label>
+          <input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="Age">
         </div>
         <div class="form-group">
-            <label for="dropdown">Select your favorite color:</label>
-            <select id="dropdown" name="color">
-                <option value="red">Red</option>
-                <option value="blue">Blue</option>
-                <option value="green">Green</option>
-                <option value="yellow">Yellow</option>
-            </select>
+          <p>How often are you purchasing coffee from BigBrew?</p>
+          <select id="dropdown" name="role" class="form-control" required="">
+            <option disabled="" selected="" value="">Select an option</option>
+            <option value="never">Never</option>
+            <option value="few">Few times a month</option>
+            <option value="week">Couple of times a week</option>
+            <option value="everyday">Everyday</option>
+            <option value="preferNo">Prefer not to say</option>
+          </select>
         </div>
+
         <div class="form-group">
-            <label>Choose your gender:</label>
-            <div class="radio-group">
-                <label>
-                    <input type="radio" name="gender" value="male"> Male
-                </label>
-                <label>
-                    <input type="radio" name="gender" value="female"> Female
-                </label>
-                <label>
-                    <input type="radio" name="gender" value="other"> Other
-                </label>
-            </div>
+          <p>Would you recommend BigBrew to a friend?</p>
+          <label>
+            <input name="user-recommend" value="definitely" type="radio" class="input-radio" checked="">Definitely</label>
+          <label>
+            <input name="user-recommend" value="maybe" type="radio" class="input-radio">Maybe</label>
+
+          <label><input name="user-recommend" value="not-sure" type="radio" class="input-radio">Not sure</label>
         </div>
+
         <div class="form-group">
-            <label>Select your hobbies:</label>
-            <div class="checkbox-group">
-                <label>
-                    <input type="checkbox" name="hobbies" value="reading"> Reading
-                </label>
-                <label>
-                    <input type="checkbox" name="hobbies" value="gaming"> Gaming
-                </label>
-                <label>
-                    <input type="checkbox" name="hobbies" value="cooking"> Cooking
-                </label>
-            </div>
+          <p>What is your favorite feature of BigBrew?</p>
+          <select id="most-like" name="mostLike" class="form-control" required="">
+            <option disabled="" selected="" value="">Select an option</option>
+            <option value="customerService">Customer Service</option>
+            <option value="cleanliness">Cleanliness</option>
+            <option value="qualityProducts">Quality Products</option>
+            <option value="atmosphere">Atmosphere</option>
+          </select>
         </div>
+
         <div class="form-group">
-            <label for="comments">Additional Comments:</label>
-            <textarea id="comments" name="comments" placeholder="Enter your comments"></textarea>
+          <p>
+            What would you like to see improved?
+            <span class="clue">(Check all that apply)</span>
+          </p>
+
+          <label><input name="prefer" value="web" type="checkbox" class="input-checkbox"> Website or App</label>
+          <label>
+            <input name="prefer" value="CustomerService" type="checkbox" class="input-checkbox">Customer Service</label>
+          <label><input name="prefer" value="products" type="checkbox" class="input-checkbox">Products</label>
+          <label><input name="prefer" value="design" type="checkbox" class="input-checkbox">Interior Design</label>
+          <label><input name="prefer" value="mop" type="checkbox" class="input-checkbox">Mode of Payment</label>
+          <label><input name="prefer" value="cleanliness" type="checkbox" class="input-checkbox">Cleanliness</label>
         </div>
+
         <div class="form-group">
-            <button type="submit" id="submit">Submit</button>
+          <p>Any comments or suggestions?</p>
+          <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
         </div>
-    </form>
+
+        <div class="form-group">
+          <button type="submit" id="submit" class="submit-button">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  
+
 </body>
 </html>
